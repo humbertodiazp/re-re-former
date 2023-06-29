@@ -3,16 +3,29 @@ class UsersController < ApplicationController
         @User = User.new
     end
     
-    def def create
+    def create
         @User = User.new(params[:user_params])
         if @User.save
-          flash[:success] = "Object successfully created"
+          flash[:success] = "User successfully created"
           redirect_to @User
         else
           flash[:error] = "Something went wrong"
           render 'new'
         end
     end
+    
+
+    def def update
+        @User = User.find(params[:id])
+        if @User.update_attributes(params[:User])
+          flash[:success] = "User was successfully updated"
+          redirect_to @User
+        else
+          flash[:error] = "Something went wrong"
+          render 'edit'
+        end
+    end
+    
 
     private
 
