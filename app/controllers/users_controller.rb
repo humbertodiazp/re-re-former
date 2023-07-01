@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
-    def def new
-        @User = User.new
+    def new
+        @user = User.new
     end
     
     def create
-        @User = User.new(params[:user_params])
-        if @User.save
-          flash[:success] = "User successfully created"
-          redirect_to @User
+        @user = User.new(params[:user_params])
+        if @user.save
+          flash[:success] = "user successfully created"
+          redirect_to @user
         else
           flash[:error] = "Something went wrong"
           render 'new'
@@ -16,10 +16,10 @@ class UsersController < ApplicationController
     
 
     def def update
-        @User = User.find(params[:id])
-        if @User.update_attributes(params[:User])
-          flash[:success] = "User was successfully updated"
-          redirect_to @User
+        @user = user.find(params[:id])
+        if @user.update_attributes(params[:user])
+          flash[:success] = "user was successfully updated"
+          redirect_to @user
         else
           flash[:error] = "Something went wrong"
           render 'edit'
