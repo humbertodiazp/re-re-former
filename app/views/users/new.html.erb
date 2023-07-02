@@ -1,5 +1,4 @@
-
- <% if @user.errors.any? %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
@@ -10,12 +9,12 @@
       </ul>
     </div>
   <% end %>
-  
-  <%= form_with model: @user do |form| %>
+
+<%= form_with model: @user do |form| %>
   <%= form.label :username, "Username:" %>
-  <%= form.text_field :username, value: "max 20 characters" %>
+  <%= form.text_field :username, placeholder: "username" %>
   <%= form.label :email, "Email:" %>
-  <%= form.text_field :email %>
+  <%= form.text_field :email, placeholder: "example@email.com"%>
   <%= form.label :password, "Password:" %>
   <%= form.text_field :password, placeholder: "6 to 20 characters" %>
   <%= form.submit %>

@@ -1,8 +1,8 @@
 <%= form_with model: @user do |form| %>
   <%= form.label :username, "Username:" %>
-  <%= form.text_field :username, value: "max 20 characters" %>
+  <%= form.text_field :username, placeholder: "username" %>
   <%= form.label :email, "Email:" %>
-  <%= form.text_field :email %>
+  <%= form.text_field :email, placeholder: "example@email.com" %>
   <%= form.label :password, "Password:" %>
   <%= form.text_field :password, placeholder: "6 to 20 characters" %>
   <%= form.submit %>
