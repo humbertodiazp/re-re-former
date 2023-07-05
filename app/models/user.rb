@@ -7,7 +7,7 @@ class User < ApplicationRecord
             # object = user object being validated
             # data = { model: "User", attribute: "Username", value: <username> }
             message: ->(object, data) do
-            "Hey #{object.name}, #{data[:value]} is already taken."
+            "#{object.username}, is already taken."
             end
             }
     validates :email, 
@@ -15,7 +15,7 @@ class User < ApplicationRecord
             # object = user object being validated
             # data = { model: "User", attribute: "Email", value: <email> }
             message: ->(object, data) do
-            "That #{object.name}, #{data[:value]} is related to another account."
+            " #{object.email},  is related to another account."
             end
             }
 end
